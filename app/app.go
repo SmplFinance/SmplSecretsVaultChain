@@ -97,7 +97,7 @@ import (
 )
 
 const (
-	AccountAddressPrefix = "cosmos"
+	AccountAddressPrefix = "ssvt"
 	Name                 = "SmplSecretsVaultChain"
 )
 
