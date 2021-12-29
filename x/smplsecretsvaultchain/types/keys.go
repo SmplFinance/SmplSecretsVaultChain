@@ -20,3 +20,15 @@ const (
 func KeyPrefix(p string) []byte {
 	return []byte(p)
 }
+
+const (
+	PassportKey = "Passport-value-"
+)
+
+const (
+	PassportStorageKey = "PassportStorage-value-"
+)
+
+const (
+	PassportsKey = "Passports-value-"
+)

@@ -1,0 +1,12 @@
+syntax = "proto3";
+package SmplFinance.smplsecretsvaultchain.smplsecretsvaultchain;
+
+option go_package = "github.com/SmplFinance/SmplSecretsVaultChain/x/smplsecretsvaultchain/types";
+import "smplsecretsvaultchain/passport.proto"; 
+
+message PassportStorage {
+  Passport passport = 1; 
+  string testPhrase = 2; 
+  string encryptedTestPhrase = 3; 
+  
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+package SmplFinance.smplsecretsvaultchain.smplsecretsvaultchain;
+
+option go_package = "github.com/SmplFinance/SmplSecretsVaultChain/x/smplsecretsvaultchain/types";
+
+message Passport {
+  repeated string mnemonic = 1; 
+  string prefix = 2; 
+  string hdpath = 3; 
+  string chainSymbol = 4; 
+  
+}

@@ -5,6 +5,9 @@ import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
 import "smplsecretsvaultchain/params.proto";
+import "smplsecretsvaultchain/passport.proto";
+import "smplsecretsvaultchain/passport_storage.proto";
+import "smplsecretsvaultchain/passports.proto";
 // this line is used by starport scaffolding # 1
 
 option go_package = "github.com/SmplFinance/SmplSecretsVaultChain/x/smplsecretsvaultchain/types";
@@ -15,7 +18,19 @@ service Query {
   rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
     option (google.api.http).get = "/SmplFinance/smplsecretsvaultchain/smplsecretsvaultchain/params";
   }
-  // this line is used by starport scaffolding # 2
+  // Queries a Passport by index.
+	rpc Passport(QueryGetPassportRequest) returns (QueryGetPassportResponse) {
+		option (google.api.http).get = "/SmplFinance/smplsecretsvaultchain/smplsecretsvaultchain/passport";
+	}
+// Queries a PassportStorage by index.
+	rpc PassportStorage(QueryGetPassportStorageRequest) returns (QueryGetPassportStorageResponse) {
+		option (google.api.http).get = "/SmplFinance/smplsecretsvaultchain/smplsecretsvaultchain/passport_storage";
+	}
+// Queries a Passports by index.
+	rpc Passports(QueryGetPassportsRequest) returns (QueryGetPassportsResponse) {
+		option (google.api.http).get = "/SmplFinance/smplsecretsvaultchain/smplsecretsvaultchain/passports";
+	}
+// this line is used by starport scaffolding # 2
 }
 
 // QueryParamsRequest is request type for the Query/Params RPC method.
@@ -27,4 +42,19 @@ message QueryParamsResponse {
   Params params = 1 [(gogoproto.nullable) = false];
 }
 
+message QueryGetPassportRequest {}
+
+message QueryGetPassportResponse {
+	Passport Passport = 1 [(gogoproto.nullable) = false];
+}
+message QueryGetPassportStorageRequest {}
+
+message QueryGetPassportStorageResponse {
+	PassportStorage PassportStorage = 1 [(gogoproto.nullable) = false];
+}
+message QueryGetPassportsRequest {}
+
+message QueryGetPassportsResponse {
+	Passports Passports = 1 [(gogoproto.nullable) = false];
+}
 // this line is used by starport scaffolding # 3

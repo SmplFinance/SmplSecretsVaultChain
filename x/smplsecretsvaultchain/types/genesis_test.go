@@ -19,9 +19,25 @@ func TestGenesisState_Validate(t *testing.T) {
 			valid:    true,
 		},
 		{
-			desc:     "valid genesis state",
+			desc: "valid genesis state",
 			genState: &types.GenesisState{
 
+				Passport: &types.Passport{
+					Mnemonic:    []string{"49"},
+					Prefix:      "53",
+					Hdpath:      "2",
+					ChainSymbol: "55",
+				},
+				PassportStorage: &types.PassportStorage{
+					Passport:            new(types.Passport),
+					TestPhrase:          "38",
+					EncryptedTestPhrase: "32",
+				},
+				Passports: &types.Passports{
+					PassportStorageMap:  "91",
+					TestPhrase:          "92",
+					EncryptedTestPhrase: "81",
+				},
 				// this line is used by starport scaffolding # types/genesis/validField
 			},
 			valid: true,
