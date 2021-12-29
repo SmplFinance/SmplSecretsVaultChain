@@ -1,0 +1,12 @@
+syntax = "proto3";
+package SmplFinance.smplsecretsvaultchain.smplsecretsvaultchain;
+
+import "gogoproto/gogo.proto";
+
+option go_package = "github.com/SmplFinance/SmplSecretsVaultChain/x/smplsecretsvaultchain/types";
+
+// Params defines the parameters for the module.
+message Params {
+  option (gogoproto.goproto_stringer) = false;
+  
+}

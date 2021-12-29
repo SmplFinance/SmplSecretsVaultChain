@@ -1,0 +1,14 @@
+syntax = "proto3";
+package SmplFinance.smplsecretsvaultchain.smplsecretsvaultchain;
+
+import "gogoproto/gogo.proto";
+import "smplsecretsvaultchain/params.proto";
+// this line is used by starport scaffolding # genesis/proto/import
+
+option go_package = "github.com/SmplFinance/SmplSecretsVaultChain/x/smplsecretsvaultchain/types";
+
+// GenesisState defines the smplsecretsvaultchain module's genesis state.
+message GenesisState {
+  Params params = 1 [(gogoproto.nullable) = false];
+  // this line is used by starport scaffolding # genesis/proto/state
+}
